@@ -1,1 +1,18 @@
-<p>list works!</p>
+<div *ngIf="itemDelete; else noDelete">
+  <h3>
+    Deleted Hero: <small>{{ itemDelete }}</small>
+  </h3>
+</div>
+
+<ng-template #noDelete>
+  <h3>No ha borrado nada</h3>
+</ng-template>
+
+<button (click)="delete()">Delete Heroe</button>
+
+<p>Heroes List</p>
+<ul>
+  <li *ngFor="let heroe of heroes; let i = index">
+    {{ heroe }}
+  </li>
+</ul>
